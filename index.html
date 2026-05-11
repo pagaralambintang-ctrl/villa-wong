@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila Wong Homestay - Gunung Dempo, Pagar Alam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            /* Menggunakan gambar perkebunan teh/gunung yang merepresentasikan Gunung Dempo */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigasi -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-xl">W</div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold text-green-900 leading-none">Vila Wong</span>
+                    <span class="text-[10px] uppercase tracking-widest text-green-700 font-semibold">Pagar Alam</span>
+                </div>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#beranda" class="hover:text-green-700 transition">Beranda</a>
+                <a href="#fasilitas" class="hover:text-green-700 transition">Fasilitas</a>
+                <a href="#pemesanan" class="hover:text-green-700 transition">Booking</a>
+                <a href="#lokasi" class="hover:text-green-700 transition">Lokasi</a>
+                <a href="#kontak" class="hover:text-green-700 transition">Kontak</a>
+            </div>
+
+            <!-- Tombol Mobile -->
+            <button class="md:hidden text-2xl" onclick="toggleMenu()">
+                <i class="fas fa-bars text-green-900"></i>
+            </button>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t p-4 flex flex-col space-y-4 shadow-inner">
+            <a href="#beranda" onclick="toggleMenu()" class="font-medium">Beranda</a>
+            <a href="#fasilitas" onclick="toggleMenu()" class="font-medium">Fasilitas</a>
+            <a href="#pemesanan" onclick="toggleMenu()" class="font-medium">Booking</a>
+            <a href="#lokasi" onclick="toggleMenu()" class="font-medium">Lokasi</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-gradient h-screen flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-3xl">
+            <div class="inline-block px-4 py-1 border border-white/30 rounded-full mb-4 backdrop-blur-sm text-sm">
+                <i class="fas fa-mountain mr-2"></i> Kaki Gunung Dempo, Pagar Alam
+            </div>
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 drop-shadow-lg">Vila Wong Homestay</h1>
+            <p class="text-lg md:text-2xl mb-8 opacity-95 font-light">Nikmati kesejukan udara pegunungan dan hamparan kebun teh langsung dari jendela kamar Anda.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#fasilitas" class="bg-green-700 hover:bg-green-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition duration-300 shadow-xl shadow-green-900/20">Eksplor Fasilitas</a>
+                <a href="#lokasi" class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white px-8 py-4 rounded-xl font-semibold text-lg transition duration-300">Lihat Lokasi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-green-100 rounded-full -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Pemandangan Pagar Alam" class="rounded-[2rem] shadow-2xl z-10">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+                        <p class="text-green-700 font-bold text-3xl">15°C</p>
+                        <p class="text-gray-500 text-xs">Suhu Rata-rata Malam</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <span class="text-green-700 font-bold tracking-widest uppercase text-sm">Tentang Vila Wong</span>
+                    <h2 class="text-4xl font-bold text-gray-900 mt-2 mb-6">Hunian Nyaman di Kota Perjuangan</h2>
+                    <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                        Terletak di lereng Gunung Dempo, Vila Wong Homestay menawarkan aksesibilitas terbaik ke objek wisata ikonik Pagar Alam. Dari hamparan kebun teh yang hijau hingga air terjun tersembunyi, semua bisa Anda jangkau dengan mudah dari sini.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-leaf text-green-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Udara Sejuk Alami</h4>
+                                <p class="text-gray-500 text-sm">Tanpa polusi, udara pegunungan yang menyegarkan setiap pagi.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marked-alt text-green-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Dekat Tangga 2001</h4>
+                                <p class="text-gray-500 text-sm">Hanya beberapa menit dari spot foto paling populer di Pagar Alam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas -->
+    <section id="fasilitas" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Pilihan Akomodasi</h2>
+            <p class="text-gray-500 mb-16 max-w-2xl mx-auto">Dirancang untuk memberikan ketenangan maksimal selama liburan Anda di Pagar Alam.</p>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Vila Keluarga -->
+                <div class="bg-white rounded-[2.5rem] shadow-sm overflow-hidden card-hover border border-gray-100">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vila Keluarga" class="w-full h-80 object-cover">
+                        <div class="absolute top-6 right-6 bg-green-700 text-white px-4 py-1 rounded-full text-sm font-semibold">Favorit Rombongan</div>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Vila Keluarga (Premium)</h3>
+                        <p class="text-gray-500 mb-8 text-left">Ideal untuk keluarga besar yang ingin merasakan kehangatan rumah di tengah dinginnya Pagar Alam. Dilengkapi ruang berkumpul luas untuk bercengkerama.</p>
+                        <div class="grid grid-cols-2 gap-4 text-left border-t border-gray-100 pt-8">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bed mr-3 text-green-700"></i> 3 Kamar Tidur
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-couch mr-3 text-green-700"></i> Ruang Tamu
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-utensils mr-3 text-green-700"></i> Dapur Lengkap
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-water mr-3 text-green-700"></i> Air Panas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vila Biasa -->
+                <div class="bg-white rounded-[2.5rem] shadow-sm overflow-hidden card-hover border border-gray-100">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1590490359683-658d3d23f972?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vila Biasa" class="w-full h-80 object-cover">
+                        <div class="absolute top-6 right-6 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">Hemat & Nyaman</div>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Vila Biasa (Deluxe)</h3>
+                        <p class="text-gray-500 mb-8 text-left">Pilihan tepat untuk pasangan atau pelancong solo yang mencari ketenangan. Menawarkan privasi penuh dengan pemandangan langsung ke taman.</p>
+                        <div class="grid grid-cols-2 gap-4 text-left border-t border-gray-100 pt-8">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-bed mr-3 text-blue-600"></i> 1 Kamar Utama
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-wifi mr-3 text-blue-600"></i> Wi-Fi Cepat
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-tv mr-3 text-blue-600"></i> Smart TV
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-mug-hot mr-3 text-blue-600"></i> Teh Pagar Alam
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halaman Pemesanan -->
+    <section id="pemesanan" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto bg-green-900 rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row">
+                <div class="md:w-2/5 p-12 text-white bg-[url('https://www.transparenttextures.com/patterns/leaf.png')]">
+                    <h2 class="text-4xl font-bold mb-6">Reservasi Kamar</h2>
+                    <p class="mb-8 opacity-80 leading-relaxed">Rencanakan liburan impian Anda di Pagar Alam. Tim kami siap menyambut kedatangan Anda dengan pelayanan ramah khas Sumatera Selatan.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs opacity-60">WhatsApp Business</p>
+                                <p class="font-bold">0812-7000-WONG</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs opacity-60">Email Support</p>
+                                <p class="font-bold">halo@vilawong.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-3/5 bg-white p-12">
+                    <form id="bookingForm" class="space-y-6" onsubmit="handleBooking(event)">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-700 ml-1">Nama Lengkap</label>
+                                <input type="text" placeholder="Masukkan nama" required class="w-full bg-gray-50 border-none rounded-xl px-5 py-3 focus:ring-2 focus:ring-green-500 transition">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-700 ml-1">Nomor WhatsApp</label>
+                                <input type="tel" placeholder="0812..." required class="w-full bg-gray-50 border-none rounded-xl px-5 py-3 focus:ring-2 focus:ring-green-500 transition">
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-700 ml-1">Check-in</label>
+                                <input type="date" required class="w-full bg-gray-50 border-none rounded-xl px-5 py-3 focus:ring-2 focus:ring-green-500 transition">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-gray-700 ml-1">Tipe Vila</label>
+                                <select class="w-full bg-gray-50 border-none rounded-xl px-5 py-3 focus:ring-2 focus:ring-green-500 transition cursor-pointer">
+                                    <option>Vila Keluarga (Premium)</option>
+                                    <option>Vila Biasa (Deluxe)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-green-700 text-white font-bold py-4 rounded-xl hover:bg-green-800 transition shadow-lg shadow-green-900/30 transform active:scale-95">Konfirmasi Pesanan</button>
+                    </form>
+                    <div id="successMsg" class="hidden mt-6 p-6 bg-green-50 border border-green-200 text-green-700 rounded-2xl text-center flex flex-col items-center">
+                        <i class="fas fa-check-circle text-4xl mb-2"></i>
+                        <p class="font-bold">Pesanan Terkirim!</p>
+                        <p class="text-sm">Admin kami akan segera menghubungi Anda melalui WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lokasi -->
+    <section id="lokasi" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Lokasi & Navigasi</h2>
+                <p class="text-gray-500">Kawasan Wisata Gunung Dempo, Kota Pagar Alam, Sumatera Selatan</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-[2.5rem] shadow-xl border border-gray-100">
+                <div class="w-full h-[500px] bg-gray-200 rounded-[2rem] flex items-center justify-center flex-col overflow-hidden relative group">
+                    <!-- Simulasi Google Maps yang lebih mendetail untuk Pagar Alam -->
+                    <img src="https://images.unsplash.com/photo-1501854140801-50d01674aa3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Peta Kawasan Gunung Dempo" class="absolute w-full h-full object-cover opacity-60">
+                    <div class="relative z-10 text-center px-6 bg-white/80 backdrop-blur-md p-10 rounded-3xl shadow-2xl max-w-md mx-4 border border-white/50">
+                        <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center text-white text-3xl mb-4 mx-auto animate-bounce shadow-lg">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold mb-2 text-gray-900">Vila Wong Homestay</h4>
+                        <p class="text-gray-600 mb-6 text-sm">Kawasan Perkebunan Teh PTPN VII, Pagar Alam Selatan, Kota Pagar Alam, 31511</p>
+                        <div class="flex flex-col gap-3">
+                            <a href="#" class="bg-green-700 text-white px-8 py-3 rounded-xl font-bold shadow-md hover:bg-green-800 transition">Buka Google Maps</a>
+                            <p class="text-[10px] text-gray-400 font-medium italic">5 Menit dari Pagar Alam Heritage (Tangga 2001)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-gray-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-16 mb-20">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-green-700 rounded-xl flex items-center justify-center text-white font-bold text-2xl">W</div>
+                        <span class="text-2xl font-bold">Vila Wong</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        Destinasi penginapan keluarga terpercaya di Kota Pagar Alam dengan pemandangan Gunung Dempo yang memukau.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-8">Pintasan</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#beranda" class="hover:text-green-500 transition">Beranda</a></li>
+                        <li><a href="#fasilitas" class="hover:text-green-500 transition">Pilihan Vila</a></li>
+                        <li><a href="#pemesanan" class="hover:text-green-500 transition">Booking Online</a></li>
+                        <li><a href="#lokasi" class="hover:text-green-500 transition">Petunjuk Arah</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-8">Ikuti Kami</h4>
+                    <p class="text-gray-400 mb-6">Cari informasi lebih lengkap melalui media sosial resmi kami:</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-xl hover:bg-blue-600 hover:scale-110 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-xl hover:bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 hover:scale-110 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-xl hover:bg-black hover:scale-110 transition duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2024 Vila Wong Homestay Pagar Alam. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-gray-500 text-xs uppercase tracking-widest">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function handleBooking(event) {
+            event.preventDefault();
+            const form = document.getElementById('bookingForm');
+            const msg = document.getElementById('successMsg');
+            
+            form.style.opacity = '0.5';
+            form.querySelectorAll('input, button, select').forEach(el => el.disabled = true);
+            
+            setTimeout(() => {
+                form.classList.add('hidden');
+                msg.classList.remove('hidden');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
